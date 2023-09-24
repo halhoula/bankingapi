@@ -1,4 +1,4 @@
-package com.bueharvest.bankingapi.model;
+package com.blueharvest.bankingapi.model;
 
 public class CreateAccountRequest {
     private int customerId;

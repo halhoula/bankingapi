@@ -1,4 +1,4 @@
-package com.bueharvest.bankingapi.domain;
+package com.blueharvest.bankingapi.domain;
 
 public enum TransactionType {
     CREDIT,

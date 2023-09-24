@@ -1,7 +1,7 @@
-package com.bueharvest.bankingapi.repository;
+package com.blueharvest.bankingapi.repository;
 
-import com.bueharvest.bankingapi.domain.Transaction;
-import com.bueharvest.bankingapi.domain.TransactionType;
+import com.blueharvest.bankingapi.domain.Transaction;
+import com.blueharvest.bankingapi.domain.TransactionType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

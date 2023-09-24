@@ -1,12 +1,7 @@
-package com.bueharvest.bankingapi.repository;
+package com.blueharvest.bankingapi.repository;
 
-import com.bueharvest.bankingapi.domain.Customer;
-import org.springframework.data.jpa.repository.EntityGraph;
+import com.blueharvest.bankingapi.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
-import java.util.Optional;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
    /* @EntityGraph(attributePaths = {"accounts", "accounts.transactions"})

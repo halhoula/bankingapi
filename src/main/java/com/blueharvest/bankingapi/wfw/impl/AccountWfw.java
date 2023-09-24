@@ -1,21 +1,19 @@
-package com.bueharvest.bankingapi.wfw.impl;
+package com.blueharvest.bankingapi.wfw.impl;
 
-import com.bueharvest.bankingapi.domain.Account;
-import com.bueharvest.bankingapi.domain.Customer;
-import com.bueharvest.bankingapi.domain.Transaction;
-import com.bueharvest.bankingapi.domain.TransactionType;
-import com.bueharvest.bankingapi.exceptions.CustomerNotFoundException;
-import com.bueharvest.bankingapi.repository.AccountRepository;
-import com.bueharvest.bankingapi.repository.CustomerRepository;
-import com.bueharvest.bankingapi.repository.TransactionRepository;
-import com.bueharvest.bankingapi.transformer.IAccountTransformer;
-import com.bueharvest.bankingapi.transformer.ICustomerTransformer;
-import com.bueharvest.bankingapi.wfw.IAccountWfw;
-import org.hibernate.Hibernate;
+import com.blueharvest.bankingapi.domain.Account;
+import com.blueharvest.bankingapi.domain.Customer;
+import com.blueharvest.bankingapi.domain.Transaction;
+import com.blueharvest.bankingapi.domain.TransactionType;
+import com.blueharvest.bankingapi.exceptions.CustomerNotFoundException;
+import com.blueharvest.bankingapi.repository.AccountRepository;
+import com.blueharvest.bankingapi.repository.CustomerRepository;
+import com.blueharvest.bankingapi.repository.TransactionRepository;
+import com.blueharvest.bankingapi.transformer.IAccountTransformer;
+import com.blueharvest.bankingapi.transformer.ICustomerTransformer;
+import com.blueharvest.bankingapi.wfw.IAccountWfw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Set;
 
 @Service
@@ -63,7 +61,7 @@ public class AccountWfw implements IAccountWfw {
         return "Account "+newAccount.getId()+" created successfully for customer "+newCustomer.getId();
     }
 
-    public com.bueharvest.bankingapi.model.Customer getUserInfo(int customerId) throws CustomerNotFoundException {
+    public com.blueharvest.bankingapi.model.Customer getUserInfo(int customerId) throws CustomerNotFoundException {
         Customer customer = customerRepository.findById(customerId).orElse(new Customer());
         if(customer.getId() == 0){
             throw new CustomerNotFoundException("Customer "+ customerId + " not found");

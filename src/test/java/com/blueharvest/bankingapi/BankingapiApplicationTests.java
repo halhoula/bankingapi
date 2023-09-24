@@ -1,4 +1,4 @@
-package com.bueharvest.bankingapi;
+package com.blueharvest.bankingapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

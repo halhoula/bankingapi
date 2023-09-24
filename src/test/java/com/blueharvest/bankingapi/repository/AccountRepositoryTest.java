@@ -1,6 +1,7 @@
-package com.bueharvest.bankingapi.repository;
+package com.blueharvest.bankingapi.repository;
 
-import com.bueharvest.bankingapi.domain.Account;
+import com.blueharvest.bankingapi.domain.Account;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -20,6 +21,6 @@ public class AccountRepositoryTest {
 
         Account savecAccount = accountRepository.save(account);
 
-        assertThat(accountRepository.findById(account.getId())).isPresent().contains(savecAccount);
+        Assertions.assertThat(accountRepository.findById(account.getId())).isPresent().contains(savecAccount);
     }
 }

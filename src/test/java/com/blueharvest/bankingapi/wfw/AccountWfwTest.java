@@ -1,13 +1,13 @@
-package com.bueharvest.bankingapi.wfw;
+package com.blueharvest.bankingapi.wfw;
 
-import com.bueharvest.bankingapi.domain.Account;
-import com.bueharvest.bankingapi.domain.Customer;
-import com.bueharvest.bankingapi.exceptions.CustomerNotFoundException;
-import com.bueharvest.bankingapi.repository.AccountRepository;
-import com.bueharvest.bankingapi.repository.CustomerRepository;
-import com.bueharvest.bankingapi.repository.TransactionRepository;
-import com.bueharvest.bankingapi.transformer.impl.CustomerTransformer;
-import com.bueharvest.bankingapi.wfw.impl.AccountWfw;
+import com.blueharvest.bankingapi.domain.Account;
+import com.blueharvest.bankingapi.domain.Customer;
+import com.blueharvest.bankingapi.exceptions.CustomerNotFoundException;
+import com.blueharvest.bankingapi.repository.AccountRepository;
+import com.blueharvest.bankingapi.repository.CustomerRepository;
+import com.blueharvest.bankingapi.repository.TransactionRepository;
+import com.blueharvest.bankingapi.transformer.impl.CustomerTransformer;
+import com.blueharvest.bankingapi.wfw.impl.AccountWfw;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -64,7 +64,7 @@ public class AccountWfwTest {
         accountWfw.setCustomerTransformer(customerTransformer);
 
         // Act
-        com.bueharvest.bankingapi.model.Customer foundCustomer = accountWfw.getUserInfo(customerId);
+        com.blueharvest.bankingapi.model.Customer foundCustomer = accountWfw.getUserInfo(customerId);
 
         // Assert
         assertEquals(1, foundCustomer.getId());

@@ -1,8 +1,8 @@
-package com.bueharvest.bankingapi.transformer;
+package com.blueharvest.bankingapi.transformer;
 
-import com.bueharvest.bankingapi.domain.Account;
+import com.blueharvest.bankingapi.domain.Account;
 
 public interface IAccountTransformer {
-    public Account toDTO(com.bueharvest.bankingapi.model.Account account);
-    public com.bueharvest.bankingapi.model.Account toModel(Account dto);
+    public Account toDTO(com.blueharvest.bankingapi.model.Account account);
+    public com.blueharvest.bankingapi.model.Account toModel(Account dto);
 }

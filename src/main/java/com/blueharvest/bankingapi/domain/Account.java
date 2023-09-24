@@ -1,10 +1,8 @@
-package com.bueharvest.bankingapi.domain;
+package com.blueharvest.bankingapi.domain;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity

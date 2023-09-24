@@ -1,16 +1,11 @@
-package com.bueharvest.bankingapi.controller;
+package com.blueharvest.bankingapi.controller;
 
-import com.bueharvest.bankingapi.domain.Customer;
-import com.bueharvest.bankingapi.model.CreateAccountRequest;
-import com.bueharvest.bankingapi.transformer.impl.CustomerTransformer;
-import com.bueharvest.bankingapi.wfw.IAccountWfw;
+import com.blueharvest.bankingapi.domain.Customer;
+import com.blueharvest.bankingapi.model.CreateAccountRequest;
+import com.blueharvest.bankingapi.wfw.IAccountWfw;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.aspectj.lang.annotation.Before;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -65,7 +60,7 @@ public class ApiControllerTest {
     @Test
     public void testGetUserInfo() throws Exception {
         Customer customerData  = new Customer(1, "name", "surname");
-        com.bueharvest.bankingapi.model.Customer customerModel = new com.bueharvest.bankingapi.model.Customer(1, "name", "surname");
+        com.blueharvest.bankingapi.model.Customer customerModel = new com.blueharvest.bankingapi.model.Customer(1, "name", "surname");
 
         when(accountWfw.getUserInfo(1)).thenReturn(customerModel);
 

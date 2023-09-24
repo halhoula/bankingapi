@@ -1,6 +1,6 @@
-package com.bueharvest.bankingapi.repository;
+package com.blueharvest.bankingapi.repository;
 
-import com.bueharvest.bankingapi.domain.Account;
+import com.blueharvest.bankingapi.domain.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AccountRepository extends JpaRepository<Account, Integer> {

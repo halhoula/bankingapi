@@ -1,4 +1,4 @@
-package com.bueharvest.bankingapi.domain;
+package com.blueharvest.bankingapi.domain;
 
 import jakarta.persistence.*;
 

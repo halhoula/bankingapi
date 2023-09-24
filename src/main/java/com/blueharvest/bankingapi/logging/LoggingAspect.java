@@ -1,4 +1,4 @@
-package com.bueharvest.bankingapi.logging;
+package com.blueharvest.bankingapi.logging;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -12,25 +12,21 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LoggingAspect {
-
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    // Pointcut to execute on all the methods of classes in a package
-    @Before("execution(* com.yourpackage..*.*(..))")
+    @Before("execution(* com.blueharvest..*.*(..))")
     public void logBefore(JoinPoint joinPoint) {
         log.info("Entering method: {}", joinPoint.getSignature().getName());
     }
 
-    // Pointcut to execute on all the methods of classes in a package
-    @AfterReturning(pointcut = "execution(* com.yourpackage..*.*(..))", returning = "result")
+    @AfterReturning(pointcut = "execution(* com.blueharvest..*.*(..))", returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
         log.info("Exiting method: {} with return value: {}", joinPoint.getSignature().getName(), result);
     }
 
-    @AfterThrowing(pointcut = "execution(* com.yourpackage..*.*(..))", throwing = "error")
+    @AfterThrowing(pointcut = "execution(* com.blueharvest..*.*(..))", throwing = "error")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable error) {
         log.error("Exception in method: {} with message: {}", joinPoint.getSignature().getName(), error.getMessage());
-        // Optionally log the stack trace if necessary
         log.debug("Exception stack trace: ", error);
     }
 }

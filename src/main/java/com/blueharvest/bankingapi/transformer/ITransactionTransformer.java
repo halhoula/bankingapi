@@ -1,10 +1,10 @@
-package com.bueharvest.bankingapi.transformer;
+package com.blueharvest.bankingapi.transformer;
 
-import com.bueharvest.bankingapi.domain.Transaction;
+import com.blueharvest.bankingapi.domain.Transaction;
 
 public interface ITransactionTransformer {
 
-    public Transaction toDTO(com.bueharvest.bankingapi.model.Transaction transaction);
+    public Transaction toDTO(com.blueharvest.bankingapi.model.Transaction transaction);
 
-    public com.bueharvest.bankingapi.model.Transaction toModel(Transaction dto);
+    public com.blueharvest.bankingapi.model.Transaction toModel(Transaction dto);
 }
