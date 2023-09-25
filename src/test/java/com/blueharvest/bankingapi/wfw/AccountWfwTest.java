@@ -64,7 +64,7 @@ public class AccountWfwTest {
         accountWfw.setCustomerTransformer(customerTransformer);
 
         // Act
-        com.blueharvest.bankingapi.model.Customer foundCustomer = accountWfw.getUserInfo(customerId);
+        com.blueharvest.bankingapi.dto.Customer foundCustomer = accountWfw.getUserInfo(customerId);
 
         // Assert
         assertEquals(1, foundCustomer.getId());

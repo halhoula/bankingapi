@@ -1,7 +1,7 @@
 package com.blueharvest.bankingapi.controller;
 
 import com.blueharvest.bankingapi.domain.Customer;
-import com.blueharvest.bankingapi.model.CreateAccountRequest;
+import com.blueharvest.bankingapi.dto.CreateAccountRequest;
 import com.blueharvest.bankingapi.wfw.IAccountWfw;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -60,7 +60,7 @@ public class ApiControllerTest {
     @Test
     public void testGetUserInfo() throws Exception {
         Customer customerData  = new Customer(1, "name", "surname");
-        com.blueharvest.bankingapi.model.Customer customerModel = new com.blueharvest.bankingapi.model.Customer(1, "name", "surname");
+        com.blueharvest.bankingapi.dto.Customer customerModel = new com.blueharvest.bankingapi.dto.Customer(1, "name", "surname");
 
         when(accountWfw.getUserInfo(1)).thenReturn(customerModel);
 

@@ -1,7 +1,7 @@
 package com.blueharvest.bankingapi.wfw;
 
 import com.blueharvest.bankingapi.exceptions.CustomerNotFoundException;
-import com.blueharvest.bankingapi.model.Customer;
+import com.blueharvest.bankingapi.dto.Customer;
 
 public interface IAccountWfw {
     public String createAccount(Integer customerId, double initialCredit) throws CustomerNotFoundException;

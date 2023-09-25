@@ -1,4 +1,4 @@
-package com.blueharvest.bankingapi.model;
+package com.blueharvest.bankingapi.dto;
 
 import java.util.ArrayList;
 import java.util.List;

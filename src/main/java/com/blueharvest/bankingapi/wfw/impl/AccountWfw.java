@@ -8,13 +8,12 @@ import com.blueharvest.bankingapi.exceptions.CustomerNotFoundException;
 import com.blueharvest.bankingapi.repository.AccountRepository;
 import com.blueharvest.bankingapi.repository.CustomerRepository;
 import com.blueharvest.bankingapi.repository.TransactionRepository;
-import com.blueharvest.bankingapi.transformer.IAccountTransformer;
 import com.blueharvest.bankingapi.transformer.ICustomerTransformer;
 import com.blueharvest.bankingapi.wfw.IAccountWfw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 
 @Service
 public class AccountWfw implements IAccountWfw {
@@ -25,8 +24,6 @@ public class AccountWfw implements IAccountWfw {
 
     @Autowired
     private AccountRepository accountRepository;
-    @Autowired
-    private IAccountTransformer accountTransformer;
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -61,16 +58,15 @@ public class AccountWfw implements IAccountWfw {
         return "Account "+newAccount.getId()+" created successfully for customer "+newCustomer.getId();
     }
 
-    public com.blueharvest.bankingapi.model.Customer getUserInfo(int customerId) throws CustomerNotFoundException {
+    public com.blueharvest.bankingapi.dto.Customer getUserInfo(int customerId) throws CustomerNotFoundException {
         Customer customer = customerRepository.findById(customerId).orElse(new Customer());
         if(customer.getId() == 0){
             throw new CustomerNotFoundException("Customer "+ customerId + " not found");
         }
-        //System.out.println("transaction ==> "+ customer.getAccounts().get(0).getTransactions().size());
-        return customerTransformer.toModel(customer);
+        return customerTransformer.toDTO(customer);
     }
 
-    private double calculerCustomerBalance(Set<Account> accounts){
+    private double calculerCustomerBalance(List<Account> accounts){
         return accounts.stream().mapToDouble(Account::getBalance).sum();
     }
 

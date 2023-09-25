@@ -2,18 +2,19 @@ package com.blueharvest.bankingapi.domain;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table(name = "ACCOUNT")
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_seq_gen")
     @SequenceGenerator(name = "account_seq_gen", sequenceName = "account_seq", allocationSize = 1)
     private int id;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Transaction> transactions;
+    @OneToMany(mappedBy = "account",cascade = CascadeType.ALL)
+    private List<Transaction> transactions;
 
     private double balance;
 
@@ -27,12 +28,12 @@ public class Account {
     public Account(int id, double balance) {
         this.id = id;
         this.balance = balance;
-        this.transactions = new HashSet<>();
+        this.transactions = new ArrayList<>();
     }
 
-    public Set<Transaction> getTransactions() {
+    public List<Transaction> getTransactions() {
         if(transactions == null){
-            transactions=new HashSet<>();
+            transactions=new ArrayList<>();
         }
 
         return transactions;

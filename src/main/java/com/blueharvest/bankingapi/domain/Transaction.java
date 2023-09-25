@@ -3,6 +3,7 @@ package com.blueharvest.bankingapi.domain;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "TRANSACTION")
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "transaction_seq_gen")

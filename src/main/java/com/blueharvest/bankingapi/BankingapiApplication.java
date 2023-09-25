@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories
 @EnableAspectJAutoProxy
 public class BankingapiApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(BankingapiApplication.class, args);
 	}

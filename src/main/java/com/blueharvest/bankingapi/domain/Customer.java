@@ -2,22 +2,11 @@ package com.blueharvest.bankingapi.domain;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-/*@NamedEntityGraph(
-        name = "customer.accounts.transactions",
-        attributeNodes = {
-                @NamedAttributeNode(value = "accounts", subgraph = "account-transactions")
-        },
-        subgraphs = {
-                @NamedSubgraph(
-                        name = "account-transactions",
-                        attributeNodes = @NamedAttributeNode("transactions")
-                )
-        }
-)*/
+@Table(name = "CUSTOMER")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq_gen")
@@ -27,8 +16,8 @@ public class Customer {
     private String surname;
 
     private double balance;
-    @OneToMany(cascade = CascadeType.ALL)
-    Set<Account> accounts;
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    List<Account> accounts;
 
     public Customer() {
     }
@@ -37,12 +26,12 @@ public class Customer {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.accounts = new HashSet<>();
+        this.accounts = new ArrayList<>();
     }
 
-    public Set<Account> getAccounts() {
+    public List<Account> getAccounts() {
         if(accounts == null){
-            accounts= new HashSet<>();
+            accounts= new ArrayList<>();
         }
         return accounts;
     }
@@ -71,7 +60,7 @@ public class Customer {
         this.surname = surname;
     }
 
-    public void setAccounts(Set<Account> accounts) {
+    public void setAccounts(List<Account> accounts) {
         this.accounts = accounts;
     }
 

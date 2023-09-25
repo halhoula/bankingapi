@@ -1,4 +1,4 @@
-package com.blueharvest.bankingapi.model;
+package com.blueharvest.bankingapi.dto;
 
 public class CreateAccountRequest {
     private int customerId;

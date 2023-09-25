@@ -1,8 +1,8 @@
 package com.blueharvest.bankingapi.controller;
 
-import com.blueharvest.bankingapi.model.CreateAccountRequest;
+import com.blueharvest.bankingapi.dto.CreateAccountRequest;
 import com.blueharvest.bankingapi.exceptions.CustomerNotFoundException;
-import com.blueharvest.bankingapi.model.Customer;
+import com.blueharvest.bankingapi.dto.Customer;
 import com.blueharvest.bankingapi.wfw.IAccountWfw;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
